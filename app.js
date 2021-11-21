@@ -55,9 +55,14 @@
 
 // find a way!
 
+// horizontal and vertical shape
 let blockEl = document.querySelector("#block");
 let verticalPosition = document.querySelector("#position-y");
 let horizontalPosition = document.querySelector("#position-x");
+// block size and shape
+let blockSize = document.querySelector("#size");
+let shapeSelector = document.querySelector("#shape-select");
+let okBtn = document.querySelector("#ok-btn");
 
 // vertical position changer
 
@@ -71,4 +76,21 @@ verticalPosition.addEventListener("change", () => {
 horizontalPosition.addEventListener("change", () => {
   blockEl.style.left = horizontalPosition.value + "px";
   // console.log(horizontalPosition.value);
+});
+
+// size changer
+blockSize.addEventListener("change", () => {
+  blockEl.style.transform = "scale(" + blockSize.value + ")";
+  // console.log(blockEl.style.transform);
+});
+
+// shape changer
+okBtn.addEventListener("click", () => {
+  let shapeOption = shapeSelector.value;
+  // console.log(shapeOption);
+  if (shapeOption === "1") {
+    blockEl.style.borderRadius = "0";
+  } else if (shapeOption === "2") {
+    blockEl.style.borderRadius = "50%";
+  }
 });
