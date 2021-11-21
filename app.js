@@ -63,6 +63,13 @@ let horizontalPosition = document.querySelector("#position-x");
 let blockSize = document.querySelector("#size");
 let shapeSelector = document.querySelector("#shape-select");
 let okBtn = document.querySelector("#ok-btn");
+// rgb background color changer for the box/circle
+let rgbaR = document.querySelector("#rgba-r");
+let rgbaG = document.querySelector("#rgba-g");
+let rgbaB = document.querySelector("#rgba-b");
+let rgbaA = document.querySelector("#rgba-a");
+let rgbaContainer = document.querySelector(".rgba-container");
+let rgbaInputs = rgbaContainer.querySelectorAll("input");
 
 // vertical position changer
 
@@ -94,3 +101,21 @@ okBtn.addEventListener("click", () => {
     blockEl.style.borderRadius = "50%";
   }
 });
+
+// color changer
+
+for (let i = 0; i < rgbaInputs.length; i++) {
+  // console.log(rgbaInputs[i]);
+  rgbaInputs[i].addEventListener("change", () => {
+    blockEl.style.backgroundColor =
+      "rgba(" +
+      rgbaR.value +
+      "," +
+      rgbaG.value +
+      "," +
+      rgbaB.value +
+      "," +
+      rgbaA.value +
+      ")";
+  });
+}
