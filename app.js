@@ -52,3 +52,5 @@ for (let i = 0; i < rgbaInputs.length; i++) {
       ")";
   });
 }
+
+// find a way!
